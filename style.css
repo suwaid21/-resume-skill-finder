@@ -1,0 +1,47 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  color: #142820;
+  background: #eef4ef;
+  line-height: 1.55;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+main { width: min(100% - 2rem, 950px); margin: 2rem auto; }
+header, form, section {
+  padding: clamp(1.2rem, 4vw, 2.4rem);
+  border-radius: 1.3rem;
+  margin-bottom: 1rem;
+}
+header { color: #f7fff9; background: #163c31; }
+header p { max-width: 52ch; }
+.brand { color: #bce8ca; font-weight: 700; margin-top: 0; }
+h1 { font-size: clamp(2rem, 6vw, 3.9rem); line-height: 1.05; max-width: 17ch; margin: .7rem 0; letter-spacing: -.045em; }
+h2 { margin: 0; line-height: 1.2; }
+form, section { background: #fff; border: 1px solid #d5e2d8; }
+.form-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem; margin-bottom: 1.3rem; }
+.columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+label { display: block; font-weight: 700; margin-bottom: .35rem; }
+textarea, input { font: inherit; width: 100%; }
+input[type="file"], textarea { padding: .65rem; border: 1px solid #859b8d; border-radius: .65rem; background: #f8fbf8; color: inherit; }
+textarea { resize: vertical; display: block; }
+button { font: inherit; font-weight: 700; border-radius: .65rem; border: 0; min-height: 44px; padding: .65rem 1rem; background: #176044; color: white; cursor: pointer; }
+button.secondary { color: #174733; background: #e0eee5; }
+button:disabled { opacity: .6; cursor: wait; }
+:focus-visible { outline: 3px solid #976211; outline-offset: 3px; }
+.help { margin: .45rem 0 .85rem; color: #465a50; font-size: .9rem; }
+#status { color: #8a3829; margin-bottom: 0; }
+#status:empty { display: none; }
+.score { font-size: 3rem; font-weight: 800; line-height: 1; margin: .85rem 0 .4rem; }
+progress { width: 100%; height: 1.1rem; accent-color: #176044; }
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; }
+.tags li { padding: .3rem .7rem; background: #e2f1e8; border-radius: 999px; }
+.missing li { background: #fff1da; }
+a { color: #145c41; }
+#courses li + li { margin-top: .45rem; }
+@media (max-width: 630px) {
+  main { margin-top: 1rem; }
+  .columns { grid-template-columns: 1fr; }
+  #analyze { width: 100%; }
+}

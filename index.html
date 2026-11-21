@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Resume Skill Finder</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./script.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="brand">Resume Skill Finder</p>
+      <h1>Find the skills your next job asks for.</h1>
+      <p>Compare your resume with a job description and find free ways to learn the skills you’re missing.</p>
+    </header>
+    <form id="analyzer">
+      <div class="form-heading">
+        <h2>Compare your resume</h2>
+        <button type="button" id="demo" class="secondary">Try sample data</button>
+      </div>
+      <div class="columns">
+        <div>
+          <label for="pdf">Choose a resume PDF</label>
+          <input id="pdf" type="file" accept=".pdf,application/pdf" aria-describedby="pdf-help">
+          <p class="help" id="pdf-help">Use a text-based PDF up to 10 MB and 20 pages.</p>
+          <label for="resume">Or paste your resume text</label>
+          <textarea id="resume" rows="6" placeholder="Paste your skills and experience" maxlength="30000"></textarea>
+        </div>
+        <div>
+          <label for="job">Job description</label>
+          <textarea id="job" rows="10" placeholder="Paste the job responsibilities and requirements" required maxlength="30000"></textarea>
+        </div>
+      </div>
+      <p class="help">Analysis runs in your browser. Your resume stays on your device.</p>
+      <button id="analyze" type="submit">Analyze skills</button>
+      <p id="status" role="status"></p>
+    </form>
+    <section id="results" hidden aria-labelledby="results-title">
+      <h2 id="results-title" tabindex="-1">Your skill match</h2>
+      <p class="score" id="score"></p>
+      <progress id="progress" max="100" aria-label="Skill match percentage"></progress>
+      <p id="summary"></p>
+      <div class="columns">
+        <div><h3>Matching skills</h3><ul id="matched" class="tags"></ul></div>
+        <div><h3>Missing skills</h3><ul id="missing" class="tags missing"></ul></div>
+      </div>
+      <h3>Free learning resources</h3>
+      <ul id="courses"></ul>
+    </section>
+  </main>
+</body>
+</html>
